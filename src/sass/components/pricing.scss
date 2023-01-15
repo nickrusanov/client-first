@@ -109,12 +109,34 @@
 		&--blue {
 			border-color: $color-accent;
 			color: $color-accent;
+
+			@extend %transition;
+
+			&:hover,
+			&:focus {
+				background-color: rgba($color-accent, 0.1);
+			}
+	
+			&:active {
+				transform: scale(0.95);
+			}
 		}
 
 		&--orange {
 			border-color: $color-accent-sec;
 			color: white;
 			background-color: $color-accent-sec;
+
+			@extend %transition;
+
+			&:hover,
+			&:focus {
+				background-color: $color-accent-sec-dark;
+			}
+	
+			&:active {
+				transform: scale(0.95);
+			}
 		}
 	}
 

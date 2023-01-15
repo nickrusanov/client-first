@@ -1,0 +1,48 @@
+<header class="header">
+	<div class="container">
+		<div class="header__inner">
+			<a class="header__logo-link" href="index.html">
+				<picture>
+					<source srcset="./img/logo.webp" type="image/webp">
+					<img class="header__logo" src="./img/logo.png" alt="logo">
+				</picture>
+			</a>
+
+			<nav class="header__nav">
+				<ul class="header__nav-list">
+					<li class="header__nav-item">
+						<a class="header__nav-link @@if (context.page === 'home') {header__nav-link--active}" href="index.html">Home</a>
+					</li>
+
+					<li class="header__nav-item">
+						<a class="header__nav-link @@if (context.page === 'product') {header__nav-link--active}" href="product.html">Product</a>
+					</li>
+
+					<li class="header__nav-item">
+						<a class="header__nav-link @@if (context.page === 'pricing') {header__nav-link--active}" href="pricing.html">Pricing</a>
+					</li>
+
+					<li class="header__nav-item">
+						<a class="header__nav-link @@if (context.page === 'about') {header__nav-link--active}" href="about.html">About Us</a>
+					</li>
+
+					<li class="header__nav-item">
+						<a class="header__nav-link @@if (context.page === 'contact') {header__nav-link--active}" href="contact.html">Contact</a>
+					</li>
+
+					<li class="header__nav-item">
+						<a class="header__nav-link @@if (context.page === 'blog') {header__nav-link--active}" href="blog.html">Blog</a>
+					</li>
+				</ul>
+			</nav>
+
+			<button class="header__btn">Clone Project</button>
+
+			<button class="header__hamburger">
+				<div class="header__hamburger-line"></div>
+				<div class="header__hamburger-line"></div>
+				<div class="header__hamburger-line"></div>
+			</button>
+		</div>
+	</div>
+</header>

@@ -1,0 +1,39 @@
+%btn {
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 1.7;
+	color: white;
+
+	border-radius: 5px;
+	background-color: $color-accent-sec;
+}
+
+%transition {
+	transition: all .3s ease;
+}
+
+%link-hover {
+	position: relative;
+
+		&::after {
+			content: "";
+			width: 100%;
+			height: 2px;
+
+			position: absolute;
+			left: 0;
+			bottom: 6px;
+
+			transform: scaleX(0);
+			transform-origin: center;
+
+			background-color: rgba($color-text, 0.4);
+
+			@extend %transition;
+		}
+
+		&:hover::after,
+		&:focus::after {
+			transform: scaleX(1);
+		}
+}

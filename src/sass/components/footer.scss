@@ -1,0 +1,304 @@
+.footer {
+	position: relative;
+
+	&__box {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+		padding: 101px 155px 101px 122px;
+		width: 100%;
+		max-width: 1420px;
+
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		border-radius: 0 20px 0 20px;
+		background-color: $color-accent;
+
+		&::before {
+			content: "";
+			width: 32px;
+			height: 32px;
+
+			position: absolute;
+			left: -56px;
+			top: 0;
+
+			border-radius: 0 0 0 8px;
+			background-color: $color-accent-sec;
+		}
+
+		&::after {
+			content: "";
+			width: 16px;
+			height: 16px;
+
+			position: absolute;
+			right: -40px;
+			bottom: 0;
+
+			border-radius: 0 0 4px 0;
+			background-color: $color-accent;
+		}
+	}
+
+	&__title {
+		max-width: 460px;
+		color: white;
+	}
+
+	&__content {
+		padding: 292px 0 80px;
+
+		background-color: #eff0f8;
+	}
+
+	&__social-link {
+		display: block;
+
+		position: relative;
+
+		&:after {
+			content: "";
+			width: 40px;
+			height: 40px;
+
+			position: absolute;
+			top: -10px;
+			left: -10px;
+		}
+
+		@extend %transition;
+
+		&:hover {
+			transform: scale(1.3);
+		}
+	}
+
+	&__social-icon {
+		height: 20px;
+		min-width: 20px;
+		object-fit: contain;
+
+		position: relative;
+		z-index: 2;
+	}
+
+	&__content-top {
+		margin-bottom: 120px;
+		display: flex;
+		justify-content: space-between;
+		gap: 80px;
+	}
+
+	&__links-box {
+		display: flex;
+		justify-content: space-between;
+		gap: 40px;
+		width: 100%;
+		max-width: 842px;
+	}
+
+	&__btn {
+		@extend %btn;
+		white-space: nowrap;
+		padding: 16px 54px;
+
+		@extend %transition;
+
+		&:hover,
+		&:focus {
+			background-color: $color-accent-sec-dark;
+		}
+
+		&:active {
+			transform: scale(0.95);
+		}
+	}
+
+	&__social {
+		display: flex;
+		gap: 22px;
+		align-items: flex-start;
+	}
+
+	&__links-title {
+		margin-bottom: 48px;
+
+		font-size: 22px;
+		line-height: 28px;
+		color: black;
+	}
+
+	&__link {
+		padding: 10px 0;
+		color: $color-text;
+
+		@extend %link-hover;
+	}
+
+	&__links-item:not(:last-child) {
+		margin-bottom: 24px;
+	}
+
+	&__content-bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__address {
+		font-size: 24px;
+		line-height: 1.4;
+	}
+
+	&__form {
+		width: 100%;
+		max-width: 845px;
+		padding: 11px;
+		padding-left: 32px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+
+		background-color: white;
+	}
+
+	&__input {
+		width: 100%;
+		padding: 5px 10px;
+
+		&:focus {
+			outline: none;
+			box-shadow: 0 0 8px rgba($color-accent, 0.4), inset 0 0 12px rgba($color-accent, 0.25);
+		}
+	}
+
+	&__submit {
+		@extend %btn;
+		padding: 20px 35px;
+		white-space: nowrap;
+
+		font-size: 18px;
+		line-height: 1.5;
+
+		@extend %transition;
+
+		&:hover,
+		&:focus {
+			background-color: $color-accent-sec-dark;
+		}
+
+		&:active {
+			transform: scale(0.95);
+		}
+	}
+
+	&__copyright {
+		padding: 20px 0;
+		text-align: center;
+
+		background-color: $color-accent;
+	}
+
+	&__copyright-text {
+		color: white;
+		line-height: 1.4;
+	}
+}
+
+// MEDIA
+
+@include media('1550px') {
+	.footer__box:after,
+	.footer__box:before {
+		display: none;
+	}
+}
+
+@include lg {
+	.footer__content {
+		padding-top: 200px;
+	}
+}
+
+@include media("880px") {
+	.footer__box {
+		padding: 50px;
+	}
+
+	.footer__content-bottom {
+		flex-direction: column;
+		gap: 50px;
+	}
+
+	.footer__address {
+		order: 2;
+	}
+
+	.footer__form {
+		padding: 20px;
+	}
+
+	.footer__input {
+		border: 2px solid $color-accent;
+		border-radius: 5px;
+	}
+}
+
+@include md {
+	.footer__content-top {
+		margin-bottom: 80px;
+		flex-direction: column;
+		gap: 50px;
+	}
+
+	.footer__social {
+		justify-content: center;
+		order: 2;
+	}
+
+	.footer__content {
+		padding-bottom: 50px;
+	}
+}
+
+@include media("650px") {
+	.footer__box {
+		flex-direction: column;
+	}
+
+	.footer__form {
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.footer__input {
+		width: 100%;
+	}
+}
+
+@include media("540px") {
+	.footer__links-box {
+		flex-wrap: wrap;
+		column-gap: 80px;
+		justify-content: center;
+	}
+
+	.footer__address {
+		text-align: center;
+	}
+
+	.footer__submit {
+		white-space: unset;
+	}
+}
+
+@include media("380px") {
+	.footer__links-box {
+		justify-content: left;
+	}
+}

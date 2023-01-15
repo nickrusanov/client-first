@@ -1,0 +1,195 @@
+.pricing {
+	&__faq {
+		margin: 400px 0 128px;
+	}
+
+	&__list {
+		position: absolute;
+		display: flex;
+		justify-content: space-between;
+		gap: 40px;
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		padding: 56px;
+
+		&--blue {
+			background: linear-gradient(0deg, #ecedff 0%, #fff 50%);
+		}
+
+		&--orange {
+			background: linear-gradient(0deg, #ffe8e2 0%, #fff 50%);
+		}
+	}
+
+	&__box {
+		margin-bottom: 32px;
+	}
+
+	&__box2 {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		gap: 48px;
+		justify-content: space-between;
+	}
+
+	&__title {
+		@include title(36, 40);
+
+		margin-bottom: 32px;
+	}
+
+	&__price {
+		@include title(36, 40);
+
+		margin-bottom: 16px;
+
+		&--big {
+			font-size: 96px;
+			line-height: 100px;
+		}
+
+		&--grey {
+			color: $color-text;
+		}
+	}
+
+	&__desc {
+		width: 100%;
+		max-width: 320px;
+	}
+
+	&__futures-list {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+
+	&__futures-item {
+		padding-left: 34px;
+
+		position: relative;
+
+		white-space: nowrap;
+
+		&::before {
+			content: "";
+			width: 18px;
+			height: 12px;
+
+			position: absolute;
+			left: 0;
+			top: 8px;
+		}
+
+		&--blue::before {
+			background: center / contain no-repeat url("../img/check.svg");
+		}
+
+		&--orange::before {
+			background: center / contain no-repeat url("../img/check-orange.svg");
+		}
+	}
+
+	&__link-btn {
+		width: 100%;
+		padding: 18px;
+
+		font-size: 24px;
+		line-height: 1.7;
+		text-align: center;
+		white-space: nowrap;
+
+		border: 2px solid black;
+		border-radius: 7px;
+
+		&--blue {
+			border-color: $color-accent;
+			color: $color-accent;
+		}
+
+		&--orange {
+			border-color: $color-accent-sec;
+			color: white;
+			background-color: $color-accent-sec;
+		}
+	}
+
+	&__testimonials {
+		margin-bottom: 260px;
+	}
+}
+
+
+
+// MEDIA
+
+@include xl {
+	.header-content--h500 {
+		height: auto;
+	}
+
+	.pricing__list {
+		position: relative;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.pricing__faq {
+		margin-top: 128px;
+	}
+}
+
+@include lg {
+	.pricing__list {
+		flex-direction: column;
+	}
+
+	.pricing__item {
+		flex-direction: row;
+	}
+}
+
+@include md {
+	.pricing__price--big {
+		font-size: 64px;
+	}
+
+	.pricing__box2 {
+		gap: 24px;
+	}
+
+	.pricing__futures-list {
+		gap: 12px;
+	}
+
+	.pricing__faq {
+		margin: 50px 0;
+	}
+
+	.pricing__testimonials {
+		margin-bottom: 180px;
+	}
+}
+
+@include media('540px') {
+	.pricing__item {
+		flex-direction: column;
+		padding: 28px;
+	}
+
+	.pricing__box {
+		text-align: center;
+	}
+
+	.pricing__desc {
+		max-width: none;
+	}
+
+	.pricing__title {
+		margin-bottom: 12px;
+	}
+}
